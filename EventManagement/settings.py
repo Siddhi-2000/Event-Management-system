@@ -31,7 +31,13 @@ SECRET_KEY = 'django-insecure-c#oqs0b6!g(ygosp2ed$*#18!o8oqnxa2bqv8u8=f*30yy*2er
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# settings.py
+
+#ALLOWED_HOSTS = ['https://siddhiiverma11.pythonanywhere.com/', 'siddhiiverma11.pythonanywhere.com']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1']
+
+
 
 
 # Application definition
@@ -152,3 +158,8 @@ STATICFILES_DIRS = [
 #manageing media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+import os
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
