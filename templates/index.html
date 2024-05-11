@@ -1,0 +1,278 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock title %}
+
+{% block body%}
+
+<div class="container-fluid px-0">
+  <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+          <div class="carousel-item active position-relative">
+              <img src="https://images.unsplash.com/photo-1504680177321-2e6a879aac86?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MXxzZWFyY2h8NHx8bXVzaWMlMjBldmVudHx8MHx8fHwxNjI1ODI5NDE4&ixlib=rb-1.2.1&q=80&w=1080 "" class="d-block w-100" alt="..." width="300" height="666">
+              <div class="carousel-caption rounded p-3 text-white" style="background-color: rgba(0, 0, 0, 0.5);">
+                  <h2>Night Concerts</h2>
+                  <p class="lead">Indulge in the melodic vibes under the starry sky with our delightful array of performances, featuring soulful melodies, electrifying beats, and unforgettable moments.</p>
+              </div>
+          </div>
+          <div class="carousel-item position-relative">
+              <img src="https://media.istockphoto.com/id/1134159199/photo/stand-up-stage-red-curtain-with-spotlights-and-a-microphone.webp?b=1&s=170667a&w=0&k=20&c=9nL_So1X5ADzPeIfaraRaITzP48kZU5vggibNlJ3xx0=" class="d-block w-100" alt="..." width="300" height="500">
+              <div class="carousel-caption rounded p-3 text-white" style="background-color: rgba(0, 0, 0, 0.5);">
+                <h2>Stand-Up Comedy Nights</h2>
+                <p class="lead">Get ready to laugh till your sides ache with our hilarious lineup of stand-up comedians, delivering non-stop laughter and unforgettable punchlines!</p>
+              </div>
+          </div>
+          <div class="carousel-item position-relative">
+              <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." width="300" height="500">
+              <div class="carousel-caption rounded p-3 text-white" style="background-color: rgba(0, 0, 0, 0.5);">
+                <h2>Inspirational Conferences</h2>
+                <p class="lead">Embark on a journey of knowledge and innovation at our insightful conferences, where industry leaders share their expertise, ideas, and visions for a brighter future.</p>
+              </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+      </button>
+  </div>
+</div>
+
+<h1 class= "my-2 text-center"> Select from the range </h1>
+
+<h2>Conference</h2>
+<div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for conference in conferences %}
+    <div class="col">
+        <div class="card shadow-sm">
+            {% if conference.image %}
+                <img src="{{ conference.image.url }}" alt="Conference Image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+
+            {% comment %} <img src="{{ conference.image.url }}" width="100%" height="200" class="bd-placeholder-img card-img-top" alt="Conference Image"> {% endcomment %}
+            <div class="card-body">
+                <h5 class="card-title">{{ conference.title }}</h5>
+                <ul>
+                    <li>Date: {{ conference.date }}</li>
+                    <li>Time: {{ conference.time }}</li>
+                    <li>Location: {{ conference.location }}</li>
+                    <li>Organizer: {{ conference.organizer }}</li>
+                </ul>
+                <a href="#" class="btn btn-primary">RSVP</a>
+                <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+
+<h2>Workshop</h2>
+
+<div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for workshop in workshops %}
+    <div class="col">
+        <div class="card shadow-sm">
+            {% if workshop.image %}
+                <img src="{{ workshop.image.url }}" alt="Workshop Image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+            {% comment %} <img src="{{ workshop.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Workshop Image"> {% endcomment %}
+            <div class="card-body">
+                <h5 class="card-title">{{ workshop.title }}</h5>
+                <ul>
+                    <li>Date: {{ workshop.date }}</li>
+                    <li>Time: {{ workshop.time }}</li>
+                    <li>Location: {{ workshop.location }}</li>
+                    <li>Organizer: {{ workshop.organizer }}</li>
+                </ul>
+                <a href="#" class="btn btn-primary">RSVP</a>
+                <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+<h2>Concert</h2>
+<div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for concert in concerts %}
+    <div class="col">
+        <div class="card shadow-sm">
+            {% if concert.image %}
+                <img src="{{ concert.image.url }}" alt="Concert Image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+            {% comment %} <img src="{{ concert.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Concert Image"> {% endcomment %}
+            <div class="card-body">
+                <h5 class="card-title">{{ concert.title }}</h5>
+                <ul>
+                    <li>Date: {{ concert.date }}</li>
+                    <li>Time: {{ concert.time }}</li>
+                    <li>Location: {{ concert.location }}</li>
+                    <li>Organizer: {{ concert.organizer }}</li>
+                </ul>
+                <a href="#" class="btn btn-primary">RSVP</a>
+                <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+
+<h2>Seminar</h2>
+<div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for seminar in seminars %}
+    <div class="col">
+        <div class="card shadow-sm">
+            {% if seminar.image %}
+                <img src="{{ seminar.image.url }}" alt="Seminar Image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+            {% comment %} <img src="{{ seminar.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Seminar Image"> {% endcomment %}
+            <div class="card-body">
+                <h5 class="card-title">{{ seminar.title }}</h5>
+                <ul>
+                    <li>Date: {{ seminar.date }}</li>
+                    <li>Time: {{ seminar.time }}</li>
+                    <li>Location: {{ seminar.location }}</li>
+                    <li>Organizer: {{ seminar.organizer }}</li>
+                </ul>
+                <a href="#" class="btn btn-primary">RSVP</a>
+                <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+
+<h2>Community Meetup</h2>
+<div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for meetup in community_meetups %}
+    <div class="col">
+        <div class="card shadow-sm">
+            {% if meetup.image %}
+                <img src="{{ meetup.image.url }}" alt="Meetup Image">
+                {% else %}
+                <p>No image available</p>
+                {% endif %}
+            {% comment %} <img src="{{ meetup.image.url }}" width="100%" height="200" class="bd-placeholder-img card-img-top" alt="Meetup Image"> {% endcomment %}
+            <div class="card-body">
+                <h5 class="card-title">{{ meetup.title }}</h5>
+                <ul>
+                    <li>Date: {{ meetup.date }}</li>
+                    <li>Time: {{ meetup.time }}</li>
+                    <li>Location: {{ meetup.location }}</li>
+                    <li>Organizer: {{ meetup.organizer }}</li>
+                </ul>
+                <a href="#" class="btn btn-primary">RSVP</a>
+                <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+
+{% endblock body %}
+
+    <!-- <a class="carousel-control-prev" href="demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="demo" data-slide="next">
+        <span class="carousel-control-prev-icon"></span>
+    </a> -->
+
+
+
+<!--<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://lovingitvegan.com/wp-content/uploads/2016/10/Vegan-Carrot-Cake-Cupcakes-15.jpg" 
+            width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">CAKES AND PASTRIES (WHOLE WHEAT VEGAN)</p>
+                
+            </div>
+        </div>
+    </div>
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://sugarspunrun.com/wp-content/uploads/2016/03/easy-chocolate-cupcakes-1-of-1-6.jpg" 
+             width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">CAKES AND CUPCAKES</p>
+                
+            </div>
+        </div>
+    </div>
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://sugarspunrun.com/wp-content/uploads/2023/01/Cream-Puffs-Recipe-1-of-1.jpg" 
+            width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">PUFFS </p>
+                
+            </div>
+        </div>
+    </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://th.bing.com/th/id/OIP.7fGtbbLRQowW7zfeVMhwLgHaE9?rs=1&pid=ImgDetMain" 
+            width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">PASTRIES AND COOKIES</p>
+                
+            </div>
+        </div>
+    </div>
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://www.cookingclassy.com/wp-content/uploads/2021/03/baked-donuts-02.jpg" 
+            width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">DONUTS</p>
+                
+            </div>
+        </div>
+    </div>
+
+      <div class="col">
+        <div class="card shadow-sm">
+            <img src="https://th.bing.com/th/id/OIP.mz4O4AmGm6w6038TreTkYQHaE8?rs=1&pid=ImgDetMain" 
+            width="100%" height="225" class="bd-placeholder-img card-img-top" alt="Your Image">
+            <div class="card-body">
+                <p class="card-text">ROLLS AND SCRUMPETS</p>
+                # <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+                    <small class="text-body-secondary">9 mins</small>
+                </div>#
+            </div>
+        </div>
+      </div>
+
+    </div> -->
+

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search Results
+{% endblock title %}
+
+{% block body %}
+    {% if conferences %}
+        <h2>Conferences</h2>
+        <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for conference in conferences %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ conference.image.url }}" width="100%" height="200" class="bd-placeholder-img card-img-top" alt="Conference Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ conference.title }}</h5>
+                            <ul>
+                                <li>Date: {{ conference.date }}</li>
+                                <li>Time: {{ conference.time }}</li>
+                                <li>Location: {{ conference.location }}</li>
+                                <li>Organizer: {{ conference.organizer }}</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">RSVP</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    {% endif %}
+
+    {% if workshops %}
+        <h2>Workshops</h2>
+        <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for workshop in workshops %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ workshop.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Workshop Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ workshop.title }}</h5>
+                            <ul>
+                                <li>Date: {{ workshop.date }}</li>
+                                <li>Time: {{ workshop.time }}</li>
+                                <li>Location: {{ workshop.location }}</li>
+                                <li>Organizer: {{ workshop.organizer }}</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">RSVP</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    {% endif %}
+
+    {% if concerts %}
+        <h2>Concerts</h2>
+        <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for concert in concerts %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ concert.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Concert Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ concert.title }}</h5>
+                            <ul>
+                                <li>Date: {{ concert.date }}</li>
+                                <li>Time: {{ concert.time }}</li>
+                                <li>Location: {{ concert.location }}</li>
+                                <li>Organizer: {{ concert.organizer }}</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">RSVP</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    {% endif %}
+
+    {% if seminars %}
+        <h2>Seminars</h2>
+        <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for seminar in seminars %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ seminar.image.url }}" width="300" height="200" class="bd-placeholder-img card-img-top" alt="Seminar Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ seminar.title }}</h5>
+                            <ul>
+                                <li>Date: {{ seminar.date }}</li>
+                                <li>Time: {{ seminar.time }}</li>
+                                <li>Location: {{ seminar.location }}</li>
+                                <li>Organizer: {{ seminar.organizer }}</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">RSVP</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    {% endif %}
+
+    {% if community_meetups %}
+        <h2>Community Meetups</h2>
+        <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for meetup in community_meetups %}
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="{{ meetup.image.url }}" width="100%" height="200" class="bd-placeholder-img card-img-top" alt="Meetup Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ meetup.title }}</h5>
+                            <ul>
+                                <li>Date: {{ meetup.date }}</li>
+                                <li>Time: {{ meetup.time }}</li>
+                                <li>Location: {{ meetup.location }}</li>
+                                <li>Organizer: {{ meetup.organizer }}</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">RSVP</a>
+                            <a href="#" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    {% endif %}
+{% endblock body %}
